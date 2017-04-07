@@ -112,7 +112,7 @@
                     </p>
                 </li>
             </ul>
-            <a class="btn" href="#">Как проехать</a>
+            <a class="btn js-open-map" href="#">Как проехать</a>
             <a class="btn" href="#">Обратная связь</a>
         </div>
         <div class="index-content-right">
@@ -160,7 +160,7 @@
     <form class="login-form" action="#"
     method="post">
         <input class="icon-user" type="text" name="login" placeholder="Логин">
-        <input class="icon-password" type="text" name="passowrd" placeholder="Пароль">
+        <input class="icon-password" type="text" name="password" placeholder="Пароль">
         <label class="login-checkbox">
             <input type="checkbox" name="remember">
             <span class="checkbox-indicator"></span>
@@ -172,55 +172,15 @@
 </div>
 <div class="modal-content-map">
     <button class="modal-content-close" type="button" title="Закрыть">Закрыть</button>
-    <img src="images/map.jpg" width="766" height="560" alt="map-image">
-    <div id="yandex-map"></div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d422587.30987735745!2d-118.57655771666153!3d34.160069115138626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z0JvQvtGBLdCQ0L3QtNC20LXQu9C10YEsINCa0LDQu9C40YTQvtGA0L3QuNGPLCDQodCo0JA!5e0!3m2!1sru!2sua!4v1491321749807"
+            width="766" height="561" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 <div class="modal-overlay"></div>
-<script>
-    var link = document.querySelector(".login");
-    var popup = document.querySelector(".modal-content");
-    var close = popup.querySelector(".modal-content-close");
-    var form = popup.querySelector("form");
-    var login = popup.querySelector("[name=login]");
-    var password = popup.querySelector("[name=password]");
-    var storage = localStorage.getItem("login");
-
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.add("modal-content-show");
-
-        if (storage) {
-            login.value = storage;
-            password.focus();
-        } else {
-            login.focus();
-        }
-    });
-
-    close.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.remove("modal-content-show");
-        popup.classList.remove("modal-error");
-     });
-
-
-    form.addEventListener("submit", function(event) {
-        if (!login.value || !password.value) {
-            event.preventDefault();
-            popup.classList.add("modal-error");
-        } else {
-            localStorage.setItem("login", login.value);
-        }
-    });
-
-
-    window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-            if(popup.classList.contains("modal-content-show")) {
-                popup.classList.remove("modal-content-show");
-            }
-        }
-    })
-</script>
+<script src="scripts.js"></script>
     </body>
 </html>
+
+
+
+
+

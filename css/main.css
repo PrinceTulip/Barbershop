@@ -822,7 +822,7 @@ main.product .product-img img{
 
 .modal-content {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 120px;
   left: 50%;
   width: 300px;
@@ -837,6 +837,23 @@ main.product .product-img img{
 .modal-content-show {
   display: block;
   animation: bounce 0.6s;
+}
+
+.modal-content-map {
+  display: block;
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  width: 300px;
+  padding: 50px 80px;
+  margin-left: -230px;
+  color: #000000;
+  background: #f8f3f0 url("../images/content-background.jpg");
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content-map-show {
+  display:block;
 }
 
 @keyframes bounce {
@@ -856,9 +873,6 @@ main.product .product-img img{
   20%, 40%, 60%, 80% {transform: translatex(10px); }
 
 }
-
-
-
 
 .modal-content-close {
   position: absolute;
